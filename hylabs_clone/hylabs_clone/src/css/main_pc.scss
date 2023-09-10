@@ -1,0 +1,691 @@
+@import "mixin";
+
+@media (min-width: 1024px) {
+  /* Header */
+  header {
+    height: 100px;
+    .inner {
+      width: calc(100% - 80px);
+      height: 100px;
+    }
+    .menu-wrap {
+      padding-top: 15rem;
+    }
+    .close-btn {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      left: 50%;
+      top: 5%;
+      transform: translateX(-50%);
+      border: 1px solid #000;
+      border-radius: 50%;
+      cursor: pointer;
+      i {
+        position: absolute;
+        left: 26%;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50%;
+        height: 2px;
+        background-color: #333;
+        &:nth-of-type(1) {
+          transform: rotate(45deg);
+        }
+        &:nth-of-type(2) {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+    nav {
+      width: 1350px;
+      margin: 0 auto;
+      padding: 0;
+      transform: translateY(-20px);
+      .scroll-wrap {
+        height: calc(100vh - 28rem);
+        overflow-y: visible;
+        & > ul {
+          display: flex;
+          justify-content: space-between;
+          flex-flow: row wrap;
+          height: 100%;
+        }
+        & > ul > li:nth-child(2) {
+          transform: translateX(-40px);
+        }
+        & > ul > li:nth-child(-n + 3) {
+          width: calc(100% / 3);
+        }
+        & > ul > li:nth-child(n + 4) {
+          width: calc(100% / 4);
+        }
+        & > ul > li {
+          padding-bottom: 0rem;
+          margin-bottom: 0rem;
+          border-bottom: none;
+          &:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+          }
+          & > a {
+            margin-bottom: 3rem;
+          }
+        }
+      }
+    }
+    .search {
+      .search-btn {
+        cursor: pointer;
+      }
+    }
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    .header-logo {
+      width: 206px;
+    }
+    .language-btn {
+      cursor: pointer;
+    }
+    .language-box {
+      width: 140px;
+      padding: 10px 0;
+      ul {
+        li {
+          a {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+  .header-right {
+    .search-icon {
+      width: 35px;
+    }
+    .menu-trigger {
+      position: relative;
+      width: 40px;
+      height: 30px;
+      margin-left: 15px;
+      cursor: pointer;
+    }
+  }
+
+  /* Video Section */
+
+  #video-section {
+    position: relative;
+    padding-top: 0;
+    .inner {
+      position: relative;
+      max-width: 100%;
+      padding: 0 0 0 80px;
+    }
+    img {
+      display: none;
+    }
+    .video-wrap {
+      display: block;
+      height: 860px;
+      transform: translateY(-70px);
+      overflow: hidden;
+      video {
+        width: 100%;
+      }
+    }
+    .text-wrap {
+      position: absolute;
+      left: 200px;
+      top: 28%;
+      strong {
+        font-size: 5.5rem;
+        br {
+          display: none;
+        }
+      }
+      span {
+        font-size: 2.9rem;
+        font-weight: 100;
+        br {
+          display: none;
+        }
+      }
+    }
+
+    &:before {
+      bottom: 31%;
+      left: 24%;
+      width: 75px;
+      height: 75px;
+      transform: translateY(-15px);
+      background-image: url("../images/icon/scroll_down_main.png");
+      opacity: 0;
+    }
+    &.motion:before {
+      animation: scroll_down 1.7s infinite ease-out, scroll_down_visible 1s 1.4s linear forwards;
+    }
+
+    @keyframes scroll_down {
+      50% {
+        transform: translateY(0);
+      }
+    }
+    @keyframes scroll_down_visible {
+      to {
+        opacity: 1;
+      }
+    }
+  }
+
+  /* microbiome-section */
+  #microbiome-section {
+    position: relative;
+    background-image: url(../images/microbiome-section/section02_bg.jpg);
+    background-size: 90vw;
+    &.motion {
+      animation: microbiome-section-bg-scale 1s 1s linear forwards;
+    }
+    .inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 13rem;
+    }
+
+    .text-wrap {
+      width: 600px;
+      & > div {
+        overflow: hidden;
+      }
+    }
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 100%;
+      li {
+        width: 50%;
+        a {
+          display: block;
+          margin-bottom: 2rem;
+          font-size: 1.4rem;
+          font-weight: 500;
+          color: rgb(17, 17, 17);
+        }
+        span {
+          font-size: 1.4rem;
+          font-weight: 100;
+          color: rgb(17, 17, 17);
+        }
+      }
+    }
+    .more-btn {
+      float: right;
+      transform: translateY(30px);
+      margin-right: 60px;
+      text-align: center;
+      overflow: visible !important;
+      &:hover .arrow {
+        animation: arrow-right 1s infinite linear;
+      }
+      a {
+        width: 130%;
+        font-size: 2.5rem;
+      }
+      .arrow {
+        width: 130%;
+      }
+    }
+    .img-wrap {
+      width: 45%;
+      margin: 0;
+      transform: translateY(50px);
+    }
+
+    &:before {
+      @include scroll-icon;
+    }
+    &.motion:before {
+      animation: scroll_down 1.7s infinite ease-out, scroll_down_visible 1s 1s linear forwards;
+    }
+
+    @keyframes scroll_down {
+      50% {
+        transform: translate(0);
+      }
+    }
+    @keyframes scroll_down_visible {
+      to {
+        opacity: 1;
+      }
+    }
+    @keyframes arrow-right {
+      50% {
+        transform: translateX(20px);
+      }
+    }
+    @keyframes microbiome-section-bg-scale {
+      to {
+        background-size: 70vw;
+      }
+    }
+  }
+
+  /* health-section */
+  #health-section {
+    position: relative;
+    background-image: url(../images/health-section/section03_bg.jpg);
+    background-size: 110vw;
+    &.motion {
+      animation: health-section-bg-scale 1s 1s linear forwards;
+      .bg-text {
+        span {
+          animation: bg-text 1.2s linear forwards;
+          &:nth-child(even) {
+            animation-delay: 1s;
+          }
+          &:nth-child(odd) {
+            animation-delay: 1.2s;
+          }
+        }
+      }
+    }
+    .inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+      padding: 0 13rem;
+    }
+    .text-wrap {
+      width: 600px;
+      & > div {
+        overflow: hidden;
+      }
+    }
+    p {
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: rgb(17, 17, 17);
+    }
+    .more-btn {
+      float: right;
+      text-align: center;
+      overflow: visible !important;
+      &:hover .arrow {
+        animation: arrow-right 1.2s infinite linear;
+      }
+      a {
+        width: 130%;
+        font-size: 2.5rem;
+      }
+      .arrow {
+        width: 130%;
+        &:before {
+          left: -1px;
+          transform: rotate(-45deg);
+        }
+        &:after {
+          left: -1px;
+          transform: rotate(45deg);
+        }
+      }
+    }
+    .img-wrap {
+      width: 45%;
+      transform: translateY(30px);
+      margin: 0 100px 0 0;
+    }
+    .bg-text {
+      bottom: -3%;
+      span {
+        display: inline-block;
+        transform: translateY(20px);
+        opacity: 0;
+        font-size: 20rem;
+      }
+    }
+    &:before {
+      @include scroll-icon;
+    }
+    &.motion:before {
+      animation: scroll_down 1.7s infinite ease-out, scroll_down_visible 1s 1s linear forwards;
+    }
+
+    @keyframes scroll_down {
+      50% {
+        transform: translate(0);
+      }
+    }
+    @keyframes scroll_down_visible {
+      to {
+        opacity: 1;
+      }
+    }
+    @keyframes arrow-left {
+      50% {
+        transform: translateX(-20px);
+      }
+    }
+    @keyframes bg-text {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    @keyframes health-section-bg-scale {
+      to {
+        background-size: 90vw;
+      }
+    }
+  }
+
+  /* natural-section */
+  #natural-section {
+    position: relative;
+    .inner {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    article.top {
+      ul {
+        width: 100%;
+        flex-flow: row nowrap;
+        li {
+          width: 25%;
+          a {
+            padding-bottom: 25vw;
+          }
+          .text-box {
+            left: 12%;
+            top: 9%;
+            strong {
+              margin-bottom: 1.8rem;
+              font-size: 2.8rem;
+            }
+            span {
+              font-size: 1.7rem;
+            }
+          }
+        }
+      }
+    }
+    article.bottom {
+      width: 1200px;
+      margin: 60px auto 0;
+      ul {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        li {
+          position: relative;
+          display: block;
+          justify-content: space-between;
+          align-items: end;
+          width: calc(100% / 3);
+          margin-bottom: 0;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          i {
+            position: relative;
+            display: inline-block;
+            padding-left: 4.5rem;
+            margin-bottom: 3rem;
+            font-size: 1.5rem;
+            font-weight: 100;
+            color: rgb(17, 17, 17);
+            &::before {
+              content: "";
+              position: absolute;
+              left: 0;
+              top: 50%;
+              transform: translateY(-50%);
+              width: 3.5rem;
+              height: 1px;
+              background-color: #000;
+            }
+          }
+          strong {
+            display: block;
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #111;
+          }
+          .more-btn {
+            position: absolute;
+            bottom: -10px;
+            padding-right: 6rem;
+            border: 1px solid #111;
+            font-weight: 400;
+            font-size: 1.1rem;
+            transition: background-color 0.3s;
+            &:hover {
+              background-color: #111;
+              color: #fff;
+            }
+            &:before {
+              content: "\f105";
+              position: absolute;
+              right: 8%;
+              top: 50%;
+              transform: translateY(-50%);
+              font-family: fontawesome;
+              font-size: 1.5rem;
+            }
+          }
+          &:nth-of-type(1) {
+            .more-btn {
+              right: 95px;
+            }
+          }
+          &:nth-of-type(2) {
+            .more-btn {
+              right: 100px;
+            }
+          }
+          &:nth-of-type(3) {
+            .more-btn {
+              right: 40px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* Footer */
+  #footer {
+    position: relative;
+    .inner {
+      width: calc(100% - 80px);
+      padding: 3.5rem 0;
+    }
+    .footer-logo {
+      display: inline-block;
+      width: 15rem;
+      margin-bottom: 1rem;
+      margin-right: 1rem;
+      transform: translateY(1.7rem);
+    }
+    i {
+      margin-bottom: 0;
+    }
+    .family-site {
+      position: absolute;
+      right: 10.5rem;
+      top: 5.75rem;
+      width: 16rem;
+      height: 2.5rem;
+      margin-right: 1rem;
+      select {
+        font-size: 1.3rem;
+      }
+      &:before {
+        right: 5%;
+        top: 57%;
+      }
+    }
+  }
+
+  /* Fullpage Navigation */
+  .fp_nav_box {
+    display: block;
+    position: fixed;
+    right: 3%;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 15px 20px;
+    border-right: 1px solid #000;
+    z-index: 100;
+    transition: 0.3s;
+    opacity: 0;
+    transform: scale(0);
+    &.active {
+      transform: scale(1);
+      opacity: 1;
+    }
+    .current-border {
+      position: absolute;
+      right: -1.5px;
+      top: 0;
+      width: 3px;
+      height: calc(100% / 3);
+      background-color: #0000ff;
+      transition: 0.3s;
+    }
+    ul {
+      li {
+        &:nth-child(n + 2) {
+          margin-top: 22px;
+        }
+        a {
+          display: block;
+          font-size: 15px;
+        }
+        &.current {
+          a {
+            color: #0000ff;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* 1301 ~ 1600 */
+@media (min-width: 1301px) and (max-width: 1600px) {
+  header {
+    nav {
+      width: 1250px;
+    }
+  }
+
+  #video-section {
+    .video-wrap {
+      transform: translateY(-20px);
+    }
+  }
+
+  #health-section {
+    .bg-text {
+      span {
+        font-size: 17rem;
+      }
+    }
+  }
+}
+
+/* 1024 ~ 1300 */
+@media (min-width: 1024px) and (max-width: 1300px) {
+  html {
+    font-size: 78%;
+  }
+
+  header {
+    nav {
+      width: 1000px;
+    }
+  }
+
+  #video-section {
+    .video-wrap {
+      min-width: 1400px;
+    }
+  }
+  #microbiome-section {
+    .inner {
+      padding: 0 80px;
+    }
+  }
+  #health-section {
+    .inner {
+      padding: 0 80px;
+    }
+    .bg-text {
+      span {
+        font-size: 14rem;
+      }
+    }
+  }
+  #natural-section {
+    article.bottom {
+      width: 100%;
+      ul {
+        li {
+          &:nth-of-type(1) {
+            .more-btn {
+              right: 85px;
+            }
+          }
+          &:nth-of-type(2) {
+            .more-btn {
+              right: 90px;
+            }
+          }
+          &:nth-of-type(3) {
+            .more-btn {
+              right: 35px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* 1024 ~ 1190 */
+@media (min-width: 1024px) and (max-width: 1190px) {
+  #natural-section {
+    article.bottom {
+      ul {
+        li {
+          .more-btn {
+            padding-right: 4rem;
+          }
+          &:nth-of-type(1) {
+            .more-btn {
+              right: 75px;
+            }
+          }
+          &:nth-of-type(2) {
+            .more-btn {
+              right: 75px;
+            }
+          }
+          &:nth-of-type(3) {
+            .more-btn {
+              right: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

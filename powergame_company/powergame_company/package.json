@@ -1,0 +1,21 @@
+{
+  "name": "powergame_company",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel src/main.html",
+    "build": "parcel build src/main.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  },
+  "dependencies": {
+    "aos": "^2.3.4",
+    "gsap": "^3.12.2"
+  }
+}

@@ -1,0 +1,12 @@
+@mixin center($width, $max_width) {
+  width: $width;
+  max-width: $max_width;
+  margin: 0 auto;
+}
+
+@mixin section-tit {
+  font-size: 5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 7rem;
+}

@@ -1,0 +1,41 @@
+.text-out {
+  position: absolute !important;
+  left: -9999px !important;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Pretendard-Regular";
+  font-size: 1.6rem;
+  color: #fff;
+  background-color: #000;
+  overscroll-behavior: contain;
+}
+
+a {
+  color: #fff;
+}
+
+.bold {
+  font-family: "Pretendard-Bold";
+}
+
+section {
+  overflow: hidden;
+}
+
+.common-wrap {
+  padding: 0 20px;
+}
+
+/**** PC ****/
+@media (min-width: 1024px) {
+  .common-wrap {
+    max-width: 1400px;
+    padding: 0;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,75 @@
+@import "mixin";
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #333;
+}
+body.hidden {
+  overflow: hidden !important;
+  height: 100vh !important;
+}
+
+.text-out {
+  position: absolute;
+  left: -9999px;
+}
+
+section {
+  height: auto !important;
+  overflow: hidden;
+}
+
+section .fp-tableCell {
+  height: auto !important;
+}
+
+.fp-auto-height.fp-section,
+.fp-auto-height .fp-slide,
+.fp-auto-height .fp-tableCell {
+  height: auto !important;
+}
+
+.inner {
+  width: calc(100% - 30px);
+  margin: 0 auto;
+}
+
+/* Fullpage Navigation */
+.fp_nav_box {
+  display: none;
+}
+.fp-watermark {
+  display: none !important;
+}
+
+/* 450 이하 */
+@media (max-width: 450px) {
+  html {
+    font-size: 52%;
+  }
+}
+
+/**** PC ****/
+@media (min-width: 1024px) {
+  html {
+    font-size: 88%;
+  }
+  section {
+    padding-top: 100px !important;
+    .inner {
+      height: calc(100vh - 100px) !important;
+      width: 100%;
+      max-width: 1920px;
+      overflow: hidden;
+    }
+  }
+  .animate-tag {
+    opacity: 0;
+  }
+}

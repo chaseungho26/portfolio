@@ -1,0 +1,26 @@
+@mixin font_poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+@mixin background {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@mixin scroll-icon {
+  content: "";
+  position: absolute;
+  bottom: 4%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 75px;
+  height: 75px;
+  transform: translateY(-15px);
+  background-image: url("../images/icon/scroll_down_main.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: invert(1);
+  opacity: 0;
+  z-index: 10;
+}
